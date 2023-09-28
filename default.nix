@@ -8,11 +8,12 @@
 
 { pkgs ? import <nixpkgs> { } }:
 
-{
+rec {
   # The `lib`, `modules`, and `overlay` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
   datasette-leaflet = pkgs.python3Packages.callPackage ./pkgs/datasette-leaflet { };
+  datasette-cluster-map = pkgs.python3Packages.callPackage ./pkgs/datasette-cluster-map { inherit datasette-leaflet; };
 }
