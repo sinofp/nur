@@ -16,4 +16,6 @@ rec {
 
   datasette-leaflet = pkgs.python3Packages.callPackage ./pkgs/datasette-leaflet { };
   datasette-cluster-map = pkgs.python3Packages.callPackage ./pkgs/datasette-cluster-map { inherit datasette-leaflet; };
+
+  beets-yearfixer = pkgs.python3Packages.callPackage ./pkgs/beets-yearfixer { };
 }
