@@ -14,4 +14,5 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
+  datasette-leaflet = pkgs.python3Packages.callPackage ./pkgs/datasette-leaflet { };
 }
